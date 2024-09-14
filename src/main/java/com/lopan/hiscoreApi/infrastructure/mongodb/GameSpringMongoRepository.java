@@ -10,6 +10,6 @@ import java.util.UUID;
 @Repository
 public interface GameSpringMongoRepository extends MongoRepository<Game, UUID> {
 
-    public List<Game> findByNameLike(String name);
+    public List<Game> findByNameLikeIgnoreCase(String name);
 
 }

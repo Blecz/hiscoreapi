@@ -38,7 +38,7 @@ public class GameMongoRepository implements GameRepository {
 
     @Override
     public List<Game> findGamesByName(String name) {
-        return springRepository.findByNameLike(name);
+        return springRepository.findByNameLikeIgnoreCase(name);
     }
 
     @Override

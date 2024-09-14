@@ -1,8 +1,5 @@
 package com.lopan.hiscoreApi.domain.game;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 public class DomainGameService implements GameService {
@@ -14,22 +11,22 @@ public class DomainGameService implements GameService {
     }
 
     @Override
-    public List<Game> searchGames(String name) {
-        return null;
+    public List<Game> findGames(String name) {
+        if (name != null)
+            return repository.findGamesByName(name);
+
+        return repository.listGames();
     }
 
     @Override
     public Game createGame(Game game) {
-        return null;
+        return repository.saveGame(game);
     }
 
     @Override
     public Game updateGame(Game game) {
-        return null;
+        Game current = repository.findGameById(game.getId());
+        return repository.updateGame(game.updateGame(game));
     }
 
-    @Override
-    public void deleteGame(String gameId) {
-
-    }
 }

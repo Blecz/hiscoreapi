@@ -8,7 +8,6 @@ import org.springframework.lang.NonNull;
 import java.util.UUID;
 
 @Getter
-@Document("games")
 public class Game {
 
     private UUID id;

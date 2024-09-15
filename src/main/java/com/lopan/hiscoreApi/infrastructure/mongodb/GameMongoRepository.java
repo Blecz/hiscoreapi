@@ -44,6 +44,6 @@ public class GameMongoRepository implements GameRepository {
     @Override
     public Game findGameById(UUID id) {
         return springRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Game with this ID not found... =("));
+                .orElseThrow(() -> new RuntimeException("Game not found with this ID... =("));
     }
 }

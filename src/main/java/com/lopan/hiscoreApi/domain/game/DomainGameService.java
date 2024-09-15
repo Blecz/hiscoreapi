@@ -1,6 +1,7 @@
 package com.lopan.hiscoreApi.domain.game;
 
 import java.util.List;
+import java.util.UUID;
 
 public class DomainGameService implements GameService {
 
@@ -27,6 +28,11 @@ public class DomainGameService implements GameService {
     public Game updateGame(Game game) {
         Game current = repository.findGameById(game.getId());
         return repository.updateGame(game.updateGame(game));
+    }
+
+    @Override
+    public Game getGame(UUID id) {
+        return repository.findGameById(id);
     }
 
 }

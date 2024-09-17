@@ -15,11 +15,13 @@ public class Game {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String key;
     private String defaultSortingField;
+    private boolean ascending;
 
-    public Game(@NonNull String name, @NonNull String key, String defaultSortingField) {
+    public Game(@NonNull String name, @NonNull String key, String defaultSortingField, boolean ascending) {
         this.name = name;
         this.key = key;
         this.defaultSortingField = defaultSortingField;
+        this.ascending = ascending;
         this.id = UUID.randomUUID();
     }
 
@@ -27,6 +29,7 @@ public class Game {
         this.name = updated.getName();
         this.key = updated.getKey();
         this.defaultSortingField = updated.getDefaultSortingField();
+        this.ascending = updated.isAscending();
         return this;
     }
 

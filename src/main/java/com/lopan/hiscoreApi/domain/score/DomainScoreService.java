@@ -2,9 +2,9 @@ package com.lopan.hiscoreApi.domain.score;
 
 import com.lopan.hiscoreApi.domain.game.Game;
 import com.lopan.hiscoreApi.domain.game.GameService;
-import com.lopan.hiscoreApi.domain.score.dto.ScoreWrapperDTO;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -30,8 +30,21 @@ public class DomainScoreService implements ScoreService {
     }
 
     @Override
-    public List<Score> topScores(UUID gameId, LocalDate startDate, LocalDate endDate, String sortingField, Boolean isAscending) {
-        return null;
+    public List<Score> topScores(UUID gameId, LocalDateTime startDate, LocalDateTime endDate, String sortingField, Boolean isAscending) {
+        if (startDate == null)
+            startDate = LocalDateTime.now().minus(30, ChronoUnit.DAYS);
+
+        if (endDate == null)
+            endDate = LocalDateTime.now();
+
+        Game game;
+        if (sortingField == null || isAscending == null) {
+            game = gameService.getGame(gameId);
+            if (sortingField == null) sortingField = game.getDefaultSortingField();
+            if (isAscending == null) isAscending = game.isAscending();
+        }
+
+        return repository.listScore(gameId, startDate, endDate, sortingField, isAscending);
     }
 
     private List<Score> scoreInfoToScores(ScoreWrapperDTO scoreWrapperDTO) {

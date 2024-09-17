@@ -2,12 +2,13 @@ package com.lopan.hiscoreApi.application;
 
 import com.lopan.hiscoreApi.domain.score.Score;
 import com.lopan.hiscoreApi.domain.score.ScoreService;
-import com.lopan.hiscoreApi.domain.score.dto.ScoreWrapperDTO;
+import com.lopan.hiscoreApi.domain.score.ScoreWrapperDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -29,8 +30,8 @@ public class ScoreRestController {
 
     @GetMapping("/{gameId}")
     public List<Score> listTopScores(@PathVariable UUID gameId,
-                                     @RequestParam(required = false) LocalDate startDate,
-                                     @RequestParam(required = false) LocalDate endDate,
+                                     @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate,
+                                     @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime endDate,
                                      @RequestParam(required = false) String sortingField,
                                      @RequestParam(required = false) Boolean isAscending)
     {

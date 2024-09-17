@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Stream;
 
 @Repository
 public interface GameSpringMongoRepository extends MongoRepository<Game, UUID> {

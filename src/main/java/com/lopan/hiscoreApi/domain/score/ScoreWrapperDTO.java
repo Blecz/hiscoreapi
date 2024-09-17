@@ -1,4 +1,4 @@
-package com.lopan.hiscoreApi.domain.score.dto;
+package com.lopan.hiscoreApi.domain.score;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

@@ -1,22 +1,15 @@
 package com.lopan.hiscoreApi.infrastructure.mongodb;
 
-import com.lopan.hiscoreApi.domain.score.DomainScoreService;
 import com.lopan.hiscoreApi.domain.score.Score;
 import com.lopan.hiscoreApi.domain.score.ScoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Stream;
 
 @Component
 @Primary

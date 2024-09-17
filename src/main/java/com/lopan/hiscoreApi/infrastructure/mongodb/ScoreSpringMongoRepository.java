@@ -4,7 +4,6 @@ import com.lopan.hiscoreApi.domain.score.Score;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.UUID;
 import java.util.stream.Stream;
 

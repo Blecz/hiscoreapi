@@ -4,9 +4,7 @@ import com.lopan.hiscoreApi.domain.score.Score;
 import com.lopan.hiscoreApi.domain.score.ScoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
-import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -24,8 +22,8 @@ public class ScoreMongoRepository implements ScoreRepository {
     }
 
     @Override
-    public Score saveScore(Score score) {
-        return springRepository.save(score);
+    public List<Score> saveScores(List<Score> scores) {
+        return springRepository.saveAll(scores);
     }
 
     @Override

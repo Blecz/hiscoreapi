@@ -1,14 +1,8 @@
 package com.lopan.hiscoreApi.domain.score;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.lopan.hiscoreApi.domain.game.Game;
-import com.lopan.hiscoreApi.domain.game.GameService;
 import lombok.Getter;
-import lombok.Setter;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDate;
-import java.util.List;
+import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.UUID;
 
@@ -16,16 +10,13 @@ import java.util.UUID;
 public class Score {
 
     private UUID gameId;
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private String gameKey;
-    private Map<String, String> score;
-    private LocalDate timestamp;
+    private Map<String, String> scoreInfo;
+    private LocalDateTime timestamp;
 
-    public Score(UUID gameId, String gameKey, Map<String, String> score) {
+    public Score(UUID gameId, Map<String, String> scoreInfo) {
         this.gameId = gameId;
-        this.gameKey = gameKey;
-        this.score = score;
-        this.timestamp = LocalDate.now();
+        this.scoreInfo = scoreInfo;
+        this.timestamp = LocalDateTime.now();
     }
 
 }

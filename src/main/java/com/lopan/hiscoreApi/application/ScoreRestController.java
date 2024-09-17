@@ -2,8 +2,8 @@ package com.lopan.hiscoreApi.application;
 
 import com.lopan.hiscoreApi.domain.score.Score;
 import com.lopan.hiscoreApi.domain.score.ScoreService;
+import com.lopan.hiscoreApi.domain.score.dto.ScoreWrapperDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cglib.core.Local;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,8 +23,8 @@ public class ScoreRestController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Score saveScore(@RequestBody Score score) {
-        return service.saveScore(score);
+    public List<Score> saveScores(@RequestBody ScoreWrapperDTO score) {
+        return service.saveScores(score);
     }
 
     @GetMapping("/{gameId}")

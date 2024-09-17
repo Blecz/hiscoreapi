@@ -2,7 +2,6 @@ package com.lopan.hiscoreApi.domain.game;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
-import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.lang.NonNull;
 
 import java.util.UUID;

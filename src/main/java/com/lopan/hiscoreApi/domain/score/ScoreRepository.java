@@ -6,6 +6,6 @@ import java.util.UUID;
 
 public interface ScoreRepository {
 
-    public Score saveScore(Score score);
+    public List<Score> saveScores(List<Score> scores);
     public List<Score> listScore(UUID gameId, LocalDate startDate, LocalDate endDate, String sortingField);
 }

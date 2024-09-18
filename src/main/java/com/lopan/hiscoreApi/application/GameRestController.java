@@ -29,9 +29,4 @@ public class GameRestController {
         return service.createGame(game);
     }
 
-    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Game updateGame(@RequestBody Game game) {
-        return service.updateGame(game);
-    }
-
 }

@@ -7,7 +7,6 @@ public interface GameService {
 
     public List<Game> findGames(String name);
     public Game createGame(Game game);
-    public Game updateGame(Game game);
     public Game getGame(UUID id);
 
 }

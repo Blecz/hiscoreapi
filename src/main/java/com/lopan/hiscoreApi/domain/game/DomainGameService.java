@@ -25,12 +25,6 @@ public class DomainGameService implements GameService {
     }
 
     @Override
-    public Game updateGame(Game game) {
-        Game current = repository.findGameById(game.getId());
-        return repository.updateGame(game.updateGame(game));
-    }
-
-    @Override
     public Game getGame(UUID id) {
         return repository.findGameById(id);
     }

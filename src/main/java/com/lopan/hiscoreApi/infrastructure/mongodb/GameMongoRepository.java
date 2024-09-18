@@ -26,11 +26,6 @@ public class GameMongoRepository implements GameRepository {
     }
 
     @Override
-    public Game updateGame(Game game) {
-        return null;
-    }
-
-    @Override
     public List<Game> listGames() {
         return springRepository.findAll();
     }

@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.lopan</groupId>
 	<artifactId>hiscoreApi</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>hiscoreApi</name>
 	<description>API to record the hiscores of any registered game</description>
 	<properties>
